@@ -1,0 +1,20 @@
+open3d
+bson
+numpy==1.26.4
+hydra-core==1.2.0
+matplotlib
+tqdm
+loguru
+transforms3d
+fastapi
+uvicorn
+pyrealsense2
+requests
+opencv-python>=4.10.0.82
+zarr==2.12.0
+py_cli_interaction
+omegaconf
+numba==0.60.0
+termcolor
+# torch (install this by yourself)
+# pytorch3d (install this by yourself, use simplified version in the repo)
