@@ -2,6 +2,7 @@ SHELL := /bin/bash
 
 IMAGE_NAME := ros-humble-teleop
 
+PREPARE_VENV := . ../teleop-env/venv/bin/activate
 PREPARE_ROS := source /opt/ros/humble/setup.bash
 
 # teleop config
@@ -40,19 +41,19 @@ docker.clean:
 docker.all: docker.build docker.run
 
 teleop.launch_camera:
-	. ../teleop-env/venv/bin/activate && \
+	${PREPARE_VENV} && \
 	${PREPARE_ROS} && \
 	python camera_node_launcher.py \
 	task=${TASK}
 
 teleop.launch_robot:
-	. ../teleop-env/venv/bin/activate && \
+	${PREPARE_VENV}&& \
 	${PREPARE_ROS} && \
 	python teleop.py \
 	task=${TASK}
 
 teleop.start_record:
-	. ../teleop-env/venv/bin/activate && \
+	${PREPARE_VENV} && \
 	${PREPARE_ROS} && \
 	python record_data.py \
 	    --save_base_dir /root/record_data \
@@ -61,7 +62,7 @@ teleop.start_record:
 	    --save_to_disk
 
 teleop.post_process:
-	. ../teleop-env/venv/bin/activate && \
+	${PREPARE_VENV} && \
 	${PREPARE_ROS} && \
 	python post_process_data.py \
 	--tag ${SAVE_FILE_DIR}
