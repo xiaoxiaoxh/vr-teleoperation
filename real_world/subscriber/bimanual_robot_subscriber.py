@@ -80,7 +80,7 @@ class BimanualRobotSubscriber(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    with initialize(config_path='../../../config', version_base="1.1"):
+    with initialize(config_path='../../config/task', version_base="1.1"):
         # config is relative to a module
         cfg = compose(config_name="default")
     transforms = RealWorldTransforms(option=cfg.transforms)
