@@ -35,7 +35,7 @@ def test_clear_fault(cfg):
 def main_with_robot_server_init():
     with initialize(config_path='../config/task', version_base="1.3"):
         # config is relative to a module
-        cfg = compose(config_name="bimanual_two_realsense_left_10fps")
+        cfg = compose(config_name="default")
 
     # create robot server
     robot_server: BimanualFlexivServer = instantiate(cfg.robot_server)
@@ -70,7 +70,7 @@ def main_with_robot_server_init():
         logger.info("Publisher node shutdown")
 
 def main_without_robot_server():
-    with initialize(config_path='../config', version_base="1.3"):
+    with initialize(config_path='../config/task', version_base="1.3"):
         # config is relative to a module
         cfg = compose(config_name="default")
 

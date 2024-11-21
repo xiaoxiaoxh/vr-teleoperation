@@ -164,7 +164,7 @@ def main(args=None):
     from hydra import initialize, compose
     from hydra.utils import instantiate
 
-    with initialize(config_path='../../../config', version_base="1.3"):
+    with initialize(config_path='../../config/task', version_base="1.3"):
         # config is relative to a module
         cfg = compose(config_name="default")
 

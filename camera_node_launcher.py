@@ -33,8 +33,6 @@ class CameraWorker:
         self.camera_config = camera_config
         if camera_config.camera_type == 'D400':
             self.camera_publisher = RealsenseCameraPublisher(**camera_config)
-        elif camera_config.camera_type == 'USB':
-            self.camera_publisher = UsbCameraPublisher(**camera_config)
         else:
             raise NotImplementedError
     def handle_signal(self, signum, frame):
