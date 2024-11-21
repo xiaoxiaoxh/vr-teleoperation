@@ -1,7 +1,7 @@
 # VR Teleoperation
 
 ## Environment Setup
-The following guidance works well for a machine with 4090 and driver 535.183.01.
+The following guidance works well for a machine with 4090, driver 535.183.01 and CUDA 12.2.1.
 A ROS2-Humble docker image is used to build the environment.
 The environment can also be built on a local machine with Ubuntu 22.04 and ROS2 Humble by manually installing the dependencies.
 
@@ -78,7 +78,6 @@ An example visualization is shown below:
     ```bash
     make teleop.post_process
     ```
-   > The post-processing can be run on the host machine. For better performance, install PyTorch3D with CUDA support and enable CUDA when calling PyTorch3D functions in [post_process_data.py](post_process_data.py).
 
 ## Troubleshooting
 1. If the camera is not detected, try to remove the container by executing `make docker.remove`, replug the camera, and execute `make docker.run` again.

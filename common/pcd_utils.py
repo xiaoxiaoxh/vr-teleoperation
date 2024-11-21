@@ -3,7 +3,7 @@ import torch
 import open3d as o3d
 import numpy as np
 
-def farthest_point_sampling(points, num_points=1024, use_cuda=False):
+def farthest_point_sampling(points, num_points=1024, use_cuda=True):
     K = [num_points]
     if use_cuda:
         points = torch.from_numpy(points).cuda()
