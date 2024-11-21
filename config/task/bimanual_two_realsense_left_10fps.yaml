@@ -1,6 +1,9 @@
 defaults:
   - default@_here_
   - _self_
+
+vr_server_ip: &vr_server_ip "192.168.2.240"
+
 publisher:
   # two realsense cameras
   realsense_camera_publisher: 
@@ -22,3 +25,15 @@ publisher:
       enable_pcd_publisher: True
       fps: 10
       decimate: 2  # (0-4) decimation_filter magnitude for point cloud
+      enable_streaming: False
+      streaming_server_ip: *vr_server_ip
+      streaming_server_port: 10004
+      streaming_quality: 10 # (0-100) 0: lowest quality, smallest size, 100: highest quality, largest size
+      streaming_chunk_size: 1024
+      streaming_display_params_list:
+        - position: [ -0.8, 0.5, 1.2 ]
+          rotation: [ 0., 0., 0. ]
+          scale: [ 0.01, 0.01, 0.01 ]
+        - position: [ 0.8, 0.5, 1.2 ]
+          rotation: [ 0., 0., 0. ]
+          scale: [ 0.01, 0.01, 0.01 ]

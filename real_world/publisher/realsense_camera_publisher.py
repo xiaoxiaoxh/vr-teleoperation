@@ -15,6 +15,9 @@ from common.time_utils import convert_float_to_ros_time
 from ros2_numpy.point_cloud2 import array_to_pointcloud2
 from common.pcd_utils import random_sample_pcd
 import time
+import socket
+import math
+import bson
 
 class RealsenseCameraPublisher(Node):
     """
@@ -31,6 +34,13 @@ class RealsenseCameraPublisher(Node):
                  enable_pcd_publisher: bool = True,
                  time_check = False,
                  random_sample_point_num: int = 10000,
+                 enable_streaming: bool = False,
+                 streaming_server_ip: str = '127.0.0.1',
+                 streaming_server_port: int = 10004,
+                 streaming_quality: int = 10,
+                 streaming_chunk_size: int = 1024,
+                 streaming_display_params_list: list = None,
+                 debug: bool = False
                  ):
         node_name = f'{camera_name}_publisher'
         super().__init__(node_name)
@@ -43,6 +53,19 @@ class RealsenseCameraPublisher(Node):
         self.time_check = time_check
         self.random_sample_point_num = random_sample_point_num
         self.enable_pcd_publisher = enable_pcd_publisher
+
+        # streaming configuration
+        self.enable_streaming = enable_streaming
+        if self.enable_streaming:
+            self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            self.streaming_server_ip = streaming_server_ip
+            self.streaming_server_port = streaming_server_port
+            self.streaming_quality = streaming_quality
+            self.streaming_chunk_size = streaming_chunk_size
+            streaming_display_params_list = [{k:list(v) for k, v in d.items()} for d in streaming_display_params_list]
+            self.streaming_display_params_list = streaming_display_params_list
+
+        self.debug = debug
 
         self.color_publisher_ = self.create_publisher(Image, f'/{camera_name}/color/image_raw', 10)
         if self.enable_pcd_publisher:
@@ -269,6 +292,34 @@ class RealsenseCameraPublisher(Node):
         # Publish the point cloud
         self.depth_publisher_.publish(pointcloud_msg)
 
+    def send_streaming_msg(self, color_image):
+        encode_param = [int(cv2.IMWRITE_JPEG_QUALITY), self.streaming_quality]
+        ret, color_image_encoded = cv2.imencode('.jpg', color_image, encode_param)
+        color_image_bytes = color_image_encoded.tobytes()
+        packed_data_dict = {"images": [{**display_params, **{"image": color_image_bytes}} for
+                             display_params in self.streaming_display_params_list]}
+        packed_data = bson.dumps(packed_data_dict)
+
+        arrow_address = (self.streaming_server_ip, self.streaming_server_port)
+        chunk_size = self.streaming_chunk_size
+
+        self.socket.sendto(len(packed_data).to_bytes(length=4, byteorder='little', signed=False), arrow_address)
+        if self.debug:
+            logger.debug(f"Sending streaming image to VR server with size {len(packed_data)}")
+
+        self.socket.sendto(chunk_size.to_bytes(length=4, byteorder='little', signed=False), arrow_address)
+        count = math.ceil(len(packed_data) / chunk_size)
+        if self.debug:
+            logger.debug(f"Sending streaming image to VR server with {count} chunks of size {chunk_size}")
+
+        for i in range(count):
+            start = i * chunk_size
+            end = (i + 1) * chunk_size
+            if end > len(packed_data):
+                end = len(packed_data)
+            self.socket.sendto(packed_data[start:end], arrow_address)
+        if self.debug:
+            logger.debug(f"Sent streaming image to VR server")
     
     def timer_callback(self):
         """
@@ -304,6 +355,11 @@ class RealsenseCameraPublisher(Node):
             if self.enable_pcd_publisher:
                 # publish the point cloud
                 self.publish_point_cloud(color_frame, depth_frame, camera_timestamp)
+
+            # send streaming image
+            if self.enable_streaming:
+                color_image = np.asanyarray(color_frame.get_data())
+                self.send_streaming_msg(color_image)
 
             # calculate fps
             self.frame_count += 1
@@ -362,7 +418,15 @@ class RealsenseCameraPublisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = RealsenseCameraPublisher(camera_name = 'external_camera')
+
+    from hydra import initialize, compose
+    from hydra.utils import instantiate
+
+    with initialize(config_path='../../config/task', version_base="1.3"):
+        # config is relative to a module
+        cfg = compose(config_name="bimanual_two_realsense_left_10fps")
+
+    node = RealsenseCameraPublisher(**cfg.publisher.realsense_camera_publisher[1], debug=True)
     try:
         rclpy.spin(node)
     except IndentationError as e:
