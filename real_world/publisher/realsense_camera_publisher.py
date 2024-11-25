@@ -14,6 +14,7 @@ from loguru import logger
 from common.time_utils import convert_float_to_ros_time
 from ros2_numpy.point_cloud2 import array_to_pointcloud2
 from common.pcd_utils import random_sample_pcd
+import uuid
 import time
 import socket
 import math
@@ -57,6 +58,7 @@ class RealsenseCameraPublisher(Node):
         # streaming configuration
         self.enable_streaming = enable_streaming
         if self.enable_streaming:
+            self.id = uuid.uuid4()
             self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             self.streaming_server_ip = streaming_server_ip
             self.streaming_server_port = streaming_server_port
@@ -296,8 +298,10 @@ class RealsenseCameraPublisher(Node):
         encode_param = [int(cv2.IMWRITE_JPEG_QUALITY), self.streaming_quality]
         ret, color_image_encoded = cv2.imencode('.jpg', color_image, encode_param)
         color_image_bytes = color_image_encoded.tobytes()
-        packed_data_dict = {"images": [{**display_params, **{"image": color_image_bytes}} for
-                             display_params in self.streaming_display_params_list]}
+        packed_data_dict = {"images": [{"id": self.id,
+                                        **display_params,
+                                        **{"image": color_image_bytes}}
+                                        for display_params in self.streaming_display_params_list]}
         packed_data = bson.dumps(packed_data_dict)
 
         arrow_address = (self.streaming_server_ip, self.streaming_server_port)
@@ -426,7 +430,7 @@ def main(args=None):
         # config is relative to a module
         cfg = compose(config_name="bimanual_two_realsense_left_10fps")
 
-    node = RealsenseCameraPublisher(**cfg.publisher.realsense_camera_publisher[1], debug=True)
+    node = RealsenseCameraPublisher(**cfg.publisher.realsense_camera_publisher[0], debug=True)
     try:
         rclpy.spin(node)
     except IndentationError as e:
