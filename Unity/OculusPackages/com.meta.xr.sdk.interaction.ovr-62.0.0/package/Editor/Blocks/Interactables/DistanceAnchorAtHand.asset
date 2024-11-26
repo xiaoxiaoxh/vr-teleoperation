@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d324028d24dbd4fa1bc36ef8dfc4f0, type: 3}
+  m_Name: DistanceAnchorAtHand
+  m_EditorClassIdentifier: 
+  id: 788e1120-3e25-4391-9a71-2ca30a47d33b
+  version: 1
+  blockName: Distance Anchor At Hand
+  description: Let you control an object remotely
+  tags:
+    array:
+    - name: Interaction
+    - name: Experimental
+    - name: Hidden
+  thumbnail: {fileID: 2800000, guid: 96224a4800d0cd74e8970c2125e871cf, type: 3}
+  order: 0
+  prefab: {fileID: 0}
+  externalBlockDependencies: []
+  dependencies:
+  - 6b67162c-2460-4766-a931-980388647573
+  packageDependencies: []
+  isSingleton: 0
+  usageInstructions: 
+  _type: 3

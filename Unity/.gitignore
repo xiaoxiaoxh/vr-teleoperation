@@ -1,0 +1,11 @@
+/[Ll]ibrary/
+/[Bb]uild/
+/[Oo]bj/
+/[Ll]ogs/
+/[Tt]emp/
+
+/.vs/
+/.idea/
+.vsconfig
+*.csproj
+*.sln

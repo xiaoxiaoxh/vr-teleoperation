@@ -1,0 +1,514 @@
+{
+    "m_SelectedDeviceId": "2G0YC1ZF9N0J6G",
+    "m_SelectedProcess": {
+        "deviceId": "2G0YC1ZF9N0J6G",
+        "name": "com.DefaultCompany.Teleoperation_CameraStreaming",
+        "processId": 7252,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownProcessesForSerialization": [
+        {
+            "deviceId": "2G0YC1ZF940X95",
+            "name": "com.meta.sample",
+            "processId": 3492,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF940X95",
+            "name": "com.meta.sample",
+            "processId": 4340,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF940X95",
+            "name": "com.meta.sample",
+            "processId": 7069,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF940X95",
+            "name": "com.meta.sample",
+            "processId": 5612,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.robotflow.yanbing",
+            "processId": 17729,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.robotflow.yanbing",
+            "processId": 4662,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.robotflow.yanbing",
+            "processId": 22438,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.robotflow.yanbing",
+            "processId": 6067,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.robotflow.yanbing",
+            "processId": 6778,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.robotflow.yanbing",
+            "processId": 7552,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.DefaultCompany.Teleoperation_yanbing",
+            "processId": 9772,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.DefaultCompany.Teleoperation_DataEngine",
+            "processId": 10162,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.DefaultCompany.Teleoperation_GelStreaming",
+            "processId": 8217,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF9N0J6G",
+            "name": "com.DefaultCompany.Teleoperation_CameraStreaming",
+            "processId": 7252,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 5493,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 8669,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 10438,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 12253,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 13540,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 15464,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 8687,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 10975,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 9264,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 14295,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 18305,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 20513,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 21744,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 27121,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 6965,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 14044,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 18030,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 8594,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 18406,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 20563,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 21298,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 23475,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 26174,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 31170,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 13006,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 15117,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 23066,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 25612,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 24053,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 26730,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 29990,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 31691,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 16180,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 21991,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 23679,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 23897,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 31065,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 31752,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 5125,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 6972,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 11349,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 11581,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 14815,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 17488,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 9999,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 10863,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZFC700GP",
+            "name": "com.robotflow.yanbing",
+            "processId": 11651,
+            "exited": false
+        },
+        {
+            "deviceId": "10.53.21.87:5555",
+            "name": "com.meta.sample",
+            "processId": 16001,
+            "exited": false
+        },
+        {
+            "deviceId": "10.53.21.87:5555",
+            "name": "com.meta.sample",
+            "processId": 17789,
+            "exited": false
+        },
+        {
+            "deviceId": "10.53.21.87:5555",
+            "name": "com.meta.sample",
+            "processId": 18919,
+            "exited": false
+        },
+        {
+            "deviceId": "10.53.21.98:5555",
+            "name": "com.robotflow.yanbing",
+            "processId": 16976,
+            "exited": false
+        },
+        {
+            "deviceId": "10.53.21.98:5555",
+            "name": "com.robotflow.yanbing",
+            "processId": 18588,
+            "exited": false
+        },
+        {
+            "deviceId": "10.53.21.98:5555",
+            "name": "com.robotflow.yanbing",
+            "processId": 10515,
+            "exited": false
+        },
+        {
+            "deviceId": "10.53.21.98:5555",
+            "name": "com.robotflow.yanbing",
+            "processId": 28403,
+            "exited": false
+        },
+        {
+            "deviceId": "10.53.21.98:5555",
+            "name": "com.robotflow.yanbing",
+            "processId": 31544,
+            "exited": false
+        },
+        {
+            "deviceId": "10.53.21.63:5555",
+            "name": "com.robotflow.yanbing",
+            "processId": 13470,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_ExtraWindowState": {
+        "Type": 0,
+        "Height": 0.0
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 2,
+        "AutoCapture": true
+    },
+    "m_FilterOptions": {
+        "m_Filter": "",
+        "m_UseRegularExpressions": false,
+        "m_MatchCase": false
+    },
+    "m_SymbolPaths": [],
+    "m_CaptureVideoSettings": {
+        "TimeLimitEnabled": false,
+        "TimeLimit": 180,
+        "VideoSizeEnabled": false,
+        "VideoSizeX": 1280,
+        "VideoSizeY": 720,
+        "BitRateEnabled": false,
+        "BitRateK": 20000,
+        "DisplayIdEnabled": false,
+        "DisplayId": ""
+    },
+    "m_InputSettings": {
+        "ShiftModifier": false,
+        "SendText": "",
+        "PosixKillSignal": 0,
+        "TargetProcess": {
+            "deviceId": "",
+            "name": "",
+            "processId": 0,
+            "exited": false
+        }
+    },
+    "m_AutoScroll": 2
+}

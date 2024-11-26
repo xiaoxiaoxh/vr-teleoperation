@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d324028d24dbd4fa1bc36ef8dfc4f0, type: 3}
+  m_Name: HandGrab
+  m_EditorClassIdentifier: 
+  id: f8766c17-aaf8-4b55-9431-de8deea83842
+  version: 1
+  blockName: Grab Interaction
+  description: Grab objects with hands or controllers
+  tags:
+    array:
+    - name: Interaction
+    - name: Experimental
+  thumbnail: {fileID: 2800000, guid: eb96e698da89d06478d1386a9e8140aa, type: 3}
+  order: 0
+  prefab: {fileID: 0}
+  externalBlockDependencies: []
+  dependencies:
+  - 6b67162c-2460-4766-a931-980388647573
+  packageDependencies: []
+  isSingleton: 0
+  usageInstructions: 
+  _type: 0

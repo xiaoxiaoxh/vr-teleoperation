@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Teleop.unity
+    guid: 5448b790a6d5c124181ca3a360ca64e9
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 18fe3b24ea9113c4cac62e68494591b7,
+      type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: c36e382303ac1334a9d67f99b269ae52,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b5ddd8099ef73874f83b38d8763f6f03,
+      type: 2}

@@ -1,0 +1,29 @@
+{
+  "name": "com.meta.xr.sdk.sharedassets",
+  "displayName": "Meta XR SDK Shared Assets",
+  "version": "62.0.0",
+  "description": "This packages provides the Meta XR SDK Shared Assets",
+  "samples": [],
+  "unity": "2021.3",
+  "unityRelease": "26f1",
+  "author": {
+    "name": "Meta Platforms, Inc.",
+    "url": "https://developer.oculus.com/"
+  },
+  "documentationUrl": "https://developer.oculus.com/documentation/unity/",
+  "changelogUrl": "https://developer.oculus.com/downloads/package/unity-integration/",
+  "licensesUrl": "https://developer.oculus.com/licenses/oculussdk",
+  "licenseMessage": "By adding or using this package you agree to the terms and conditions of the Meta Platforms Technologies SDK License Agreement: https://developer.oculus.com/licenses/oculussdk",
+  "keywords": [
+    "Assets",
+    "SDK",
+    "Quest",
+    "XR",
+    "Meta",
+    "Oculus"
+  ],
+  "dependencies": {
+    "com.unity.ugui": "1.0.0",
+    "com.unity.textmeshpro": "3.0.6"
+  }
+}
