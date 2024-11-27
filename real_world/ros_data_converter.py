@@ -20,18 +20,12 @@ class ROS2DataConverter:
                  transforms: RealWorldTransforms,
                  depth_camera_point_cloud_topic_names: List[Optional[str]] = [None, None, None],  # external, left wrist, right wrist
                  depth_camera_rgb_topic_names: List[Optional[str]] = [None, None, None],  # external, left wrist, right wrist
-                 tactile_camera_rgb_topic_names: List[Optional[str]] = [None, None, None, None],  # left gripper1, left gripper2, right gripper1, right gripper2
-                 tactile_camera_marker_topic_names: List[Optional[str]] = [None, None, None, None], # left gripper1, left gripper2, right gripper1, right gripper2
-                 debug = True,
-                 tactile_camera_rgb_image_shape: Tuple = (352, 288)):
+                 debug = True):
         self.transforms = transforms
         self.debug = debug
         self.depth_camera_point_cloud_topic_names = depth_camera_point_cloud_topic_names
         self.depth_camera_rgb_topic_names = depth_camera_rgb_topic_names
-        self.tactile_camera_rgb_topic_names = tactile_camera_rgb_topic_names
-        self.tactile_camera_marker_topic_names = tactile_camera_marker_topic_names
         self.bridge = CvBridge()
-        self.tactile_camera_rgb_image_shape = tactile_camera_rgb_image_shape
 
     def visualize_tcp_poses(self, tcp_pose_left_in_world: np.ndarray, tcp_pose_right_in_world: np.ndarray):
         world = o3d.geometry.TriangleMesh.create_coordinate_frame(size=1.0)

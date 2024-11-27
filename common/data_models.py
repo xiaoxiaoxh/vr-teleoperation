@@ -28,10 +28,6 @@ class Arrow(BaseModel):
     start: List[float] = Field(default_factory=lambda: [0.0, 0.0, 0.0])
     end: List[float] = Field(default_factory=lambda: [0.0, 0.0, 0.0])
 
-class TactileSensorMessage(BaseModel):
-    device_id: str
-    arrows: List[Arrow]
-
 class BimanualRobotStates(BaseModel):
     leftRobotTCP: List[float]  # (7) (x, y, z, qw, qx, qy, qz)
     rightRobotTCP: List[float]  # (7) (x, y, z, qw, qx, qy, qz)

@@ -46,8 +46,6 @@ class DataRecorder(Node):
         subs_name_type = get_topic_and_type(self.device_to_topic_mapping)
         depth_camera_point_cloud_topic_names: List[Optional[str]] = [None, None, None]  # external, left wrist, right wrist
         depth_camera_rgb_topic_names: List[Optional[str]] = [None, None, None]  # external, left wrist, right wrist
-        tactile_camera_rgb_topic_names: List[Optional[str]] = [None, None, None, None]  # left gripper1, left gripper2, right gripper1, right gripper2
-        tactile_camera_marker_topic_names: List[Optional[str]] = [None, None, None, None]  # left gripper1, left gripper2, right gripper1, right gripper2
 
         for topic, msg_type in subs_name_type:
             if "depth/points" in topic:
@@ -58,44 +56,21 @@ class DataRecorder(Node):
                 elif "right_wrist_camera" in topic:
                     depth_camera_point_cloud_topic_names[2] = topic
             elif "color/image_raw" in topic:
-                if "gripper_camera" in topic:
-                    if "left_gripper_camera_1" in topic:
-                        tactile_camera_rgb_topic_names[0] = topic
-                    elif "left_gripper_camera_2" in topic:
-                        tactile_camera_rgb_topic_names[1] = topic
-                    elif "right_gripper_camera_1" in topic:
-                        tactile_camera_rgb_topic_names[2] = topic
-                    elif "right_gripper_camera_2" in topic:
-                        tactile_camera_rgb_topic_names[3] = topic
-                else:
-                    if "external_camera" in topic:
-                        depth_camera_rgb_topic_names[0] = topic
-                    elif "left_wrist_camera" in topic:
-                        depth_camera_rgb_topic_names[1] = topic
-                    elif "right_wrist_camera" in topic:
-                        depth_camera_rgb_topic_names[2] = topic
-            elif "marker_offset/information" in topic:
-                if "left_gripper_camera_1" in topic:
-                    tactile_camera_marker_topic_names[0] = topic
-                elif "left_gripper_camera_2" in topic:
-                    tactile_camera_marker_topic_names[1] = topic
-                elif "right_gripper_camera_1" in topic:
-                    tactile_camera_marker_topic_names[2] = topic
-                elif "right_gripper_camera_2" in topic:
-                    tactile_camera_marker_topic_names[3] = topic
+                if "external_camera" in topic:
+                    depth_camera_rgb_topic_names[0] = topic
+                elif "left_wrist_camera" in topic:
+                    depth_camera_rgb_topic_names[1] = topic
+                elif "right_wrist_camera" in topic:
+                    depth_camera_rgb_topic_names[2] = topic
         
 
         if self.debug:
             logger.debug(f"Depth camera point cloud topic names: {depth_camera_point_cloud_topic_names}")
             logger.debug(f"Depth camera rgb topic names: {depth_camera_rgb_topic_names}")
-            logger.debug(f"Tactile camera rgb topic names: {tactile_camera_rgb_topic_names}")
-            logger.debug(f"Tactile camera marker topic names: {tactile_camera_marker_topic_names}")
 
         self.data_converter = ROS2DataConverter(self.transforms,
                                                 depth_camera_point_cloud_topic_names,
                                                 depth_camera_rgb_topic_names,
-                                                tactile_camera_rgb_topic_names,
-                                                tactile_camera_marker_topic_names,
                                                 debug=self.debug)
         if self.data_converter is None:
             logger.warning("no calling data converter")
