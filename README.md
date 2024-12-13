@@ -17,10 +17,14 @@ The environment can also be built on a local machine with Ubuntu 22.04 and ROS2 
 make docker.build
 ```
 
-### 2. [Optional] Install Required Camera SDKs
+### 2. Install the Flexiv RDK
+1. Copy the `.so` file to the root directory of the project.
+
+
+### 3. [Optional] Install Required Camera SDKs
 1. If RealSense cameras are used, install [librealsense2](https://dev.intelrealsense.com/docs/compiling-librealsense-for-linux-ubuntu-guide) on the host machine.
 
-### 3. Calibrate the Cameras
+### 4. Calibrate the Cameras
 An example calibration result in provide in [data/calibration](data/calibration).
 Each `A_to_B_transform.json` contains the transformation from coordinate system A to coordinate system B.
 To visualize the calibration result, run the following command:
@@ -34,7 +38,7 @@ An example visualization is shown below:
 - The robot bases (small) and external camera (middle) in the world coordinate (large)
 <img src="assets/robot_base_camera_in_world.png" alt="Robot bases and camera in world" style="width: 300px; height: auto;">
 
-### 4. Build the Unity Project into Quest3
+### 5. Build the Unity Project into Quest3
 Please refer to the [Unity Build Guidance](Unity/README.md) for building the APP into Quest3.
 
 ## Usage
