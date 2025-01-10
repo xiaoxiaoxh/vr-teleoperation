@@ -12,7 +12,7 @@ class HandMes(BaseModel):
     middleTip: List[float]
     ringTip: List[float]
     pinkyTip: List[float]
-    squeeze: int
+    squeeze: float
     cmd: int  # control signal (deprecated now)
     # # for left controller (B, A, joystick, trigger, side_trigger)
     # # for right controller (Y, X, joystick, trigger, side_trigger)
